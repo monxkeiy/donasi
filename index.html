@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support Saya 💖 | Donasi QR</title>
+  <meta name="description" content="Dukung saya dengan donasi melalui QR Code ini. Terima kasih atas dukungannya!">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: radial-gradient(circle at top, #1b002b, #090013);
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+
+    /* Neon Background Animation */
+    .glow-bg {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(255,0,128,0.3), transparent 70%);
+      filter: blur(200px);
+      animation: rotateGlow 15s linear infinite;
+    }
+
+    @keyframes rotateGlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .card {
+      position: relative;
+      z-index: 2;
+      padding: 40px;
+      width: 90%;
+      max-width: 400px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 30px rgba(255, 0, 128, 0.3);
+      backdrop-filter: blur(15px);
+      text-align: center;
+      animation: fadeIn 1.2s ease;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #ff00d9, #00faff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      color: #cfcfcf;
+      margin-bottom: 25px;
+      font-size: 0.95rem;
+    }
+
+    .qr img {
+      width: 220px;
+      height: 220px;
+      border-radius: 15px;
+      border: 3px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 20px rgba(0, 255, 234, 0.5);
+      animation: pulse 2s ease-in-out infinite;
+      transition: transform 0.2s;
+    }
+
+    .qr img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(255, 0, 234, 0.8);
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 0, 234, 0.5); }
+      50% { transform: scale(1.05); box-shadow: 0 0 35px rgba(0, 255, 234, 0.7); }
+    }
+
+    button {
+      margin-top: 25px;
+      background: linear-gradient(90deg, #00eaff, #ff00c8);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s ease;
+      box-shadow: 0 0 15px rgba(255, 0, 128, 0.4);
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(0, 255, 234, 0.6);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+      z-index: 2;
+    }
+
+    footer a {
+      color: #00eaff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-bg"></div>
+
+  <div class="card">
+    <h1>Support Saya 💖</h1>
+    <p>Terima kasih sudah mendukung saya! Scan QR di bawah atau klik tombol untuk salin link donasi.</p>
+    <div class="qr">
+      <!-- 🔹 Ganti src di bawah dengan QR code donasimu -->
+      <img src="/qrish.png" alt="QR Donasi">
+    </div>
+    <button onclick="copyLink()">Salin Link QR</button>
+  </div>
+
+  <footer>
+    © 2025 Dibuat dengan 💫 oleh <a href="#">Monx</a>
+  </footer>
+
+  <script>
+    function copyLink() {
+      const qrLink = "/qrish.png"; // ubah ke link QR kamu
+      navigator.clipboard.writeText(qrLink);
+      alert("✅ Link QR telah disalin!");
+    }
+  </script>
+</body>
+</html>
